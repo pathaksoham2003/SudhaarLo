@@ -1,0 +1,21 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "SudhaarLo Backend by Soham Pathak 7887557175, pathaksoham2003@gmail.com",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node --env-file=env/.env.development index.js",
+    "start": "node --env-file=env/.env.production index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Soham Pathak",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.1.5"
+  }
+}
