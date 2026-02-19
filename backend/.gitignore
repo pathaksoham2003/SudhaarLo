@@ -98,3 +98,4 @@ Thumbs.db
 
 # Dependencies lock
 package-lock.json
+uploads/

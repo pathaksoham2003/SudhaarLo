@@ -1,7 +1,7 @@
 import { Typography, Button, Box } from '@mui/material';
 import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
 import { useRouteError } from 'react-router-dom';
-import FlexBox from '@core/components/Elements/FlexBox';
+import FlexBox from '@core/component/Elements/FlexBox';
 import { useDeviceType } from '@core/hooks/useBreakpointValue';
 
 export const RouterErrorElement = () => {

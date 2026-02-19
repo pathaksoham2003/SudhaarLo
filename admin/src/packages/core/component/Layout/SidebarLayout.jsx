@@ -27,10 +27,11 @@ import ExpandLess from "@mui/icons-material/ExpandLess";
 import ExpandMore from "@mui/icons-material/ExpandMore";
 import StarBorder from "@mui/icons-material/StarBorder";
 import { Outlet, useNavigate } from "react-router-dom";
+import Spinner from "@core/component/Elements/Spinner";
 
 const drawerWidth = 260;
 
-const SidebarLayout = () => {
+const SidebarLayout = ({ children }) => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -44,28 +45,28 @@ const SidebarLayout = () => {
   };
 
   const topMenu = [
-    { text: "Manufacturer", icon: <FactoryIcon />, path: "/app/manufacturer" },
-    { text: "Distributor", icon: <StoreIcon />, path: "/app/distributor" },
-    { text: "Retailer", icon: <LocalShippingIcon />, path: "/app/retailer" },
-    { text: "Brands", icon: <LoyaltyIcon />, path: "/app/brand" },
+    { text: "Dashboard", icon: <StoreIcon />, path: "/admin/dashboard" },
+    { text: "Users", icon: <AccountCircleIcon />, path: "/admin/users" },
+    { text: "Service Providers", icon: <LocalShippingIcon />, path: "/admin/providers" },
+    { text: "Bookings", icon: <LoyaltyIcon />, path: "/admin/bookings" },
   ];
 
   const categorySubMenu = [
-    { text: "Age Group", path: "/app/categories/age-group" },
-    { text: "Skill", path: "/app/categories/skill" },
-    { text: "Category", path: "/app/categories/category" },
+    { text: "Categories", path: "/admin/categories" },
+    { text: "Services", path: "/admin/services" },
   ];
 
   const handleLogout = () => {
-    localStorage.clear();
-    navigate("/");
+    localStorage.removeItem("auth_token");
+    localStorage.removeItem("user_role");
+    navigate("/login");
   };
 
   const bottomMenu = [
     {
       text: "Profile",
       icon: <AccountCircleIcon />,
-      path: "/app/profile",
+      path: "/admin/profile",
       type: "filled",
     },
     { text: "Logout", icon: <LogoutIcon />, onClick: handleLogout, type: "outlined" },
@@ -92,7 +93,7 @@ const SidebarLayout = () => {
               color: theme.palette.primary.main,
             }}
           >
-            Flicks
+            SudhaarLo
           </Typography>
         </Toolbar>
 
@@ -316,7 +317,7 @@ const SidebarLayout = () => {
         )}
 
         <Box sx={{ p: 2, mt: isMobile ? 8 : 0 }}>
-          <Outlet />
+          {children || <Outlet />}
         </Box>
       </Box>
     </Box>

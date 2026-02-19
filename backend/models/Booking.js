@@ -16,17 +16,17 @@ const bookingSchema = new mongoose.Schema({
         ref: "Service",
         required: true
     },
-    service_date: {
+    booking_date: {
         type: Date,
         required: true
     },
-    service_time: {
+    address: {
         type: String,
         required: true
     },
     booking_status: {
         type: String,
-        enum: ["PENDING", "APPROVED", "REJECTED", "CANCELLED"],
+        enum: ["PENDING", "APPROVED", "IN_PROGRESS", "COMPLETED", "REJECTED", "CANCELLED"],
         default: "PENDING"
     },
     payment_status: {

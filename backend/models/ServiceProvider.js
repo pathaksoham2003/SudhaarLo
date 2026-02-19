@@ -39,7 +39,30 @@ const serviceProviderSchema = new mongoose.Schema({
         expiry_date: Date,
         amount: Number
     },
-    photos: [String]
+    photos: [String],
+    average_rating: {
+        type: Number,
+        default: 0
+    },
+    total_reviews: {
+        type: Number,
+        default: 0
+    },
+    kyc: {
+        full_name: String,
+        aadhar_number: String,
+        pan_number: String,
+        aadhar_file: String,
+        pan_file: String,
+        submitted: {
+            type: Boolean,
+            default: false
+        },
+        verified: {
+            type: Boolean,
+            default: false
+        }
+    }
 }, { timestamps: true });
 
 serviceProviderSchema.index({ location: "2dsphere" });

@@ -11,14 +11,21 @@ const providerServiceSchema = new mongoose.Schema({
         ref: "Service",
         required: true
     },
-    price_range: {
-        min: Number,
-        max: Number
-    },
-    rough_duration_minutes: Number,
-    active: {
+    price_range: String,
+    min_price: Number,
+    max_price: Number,
+    rough_duration: String,
+    is_enabled: {
         type: Boolean,
         default: true
+    },
+    average_rating: {
+        type: Number,
+        default: 0
+    },
+    total_reviews: {
+        type: Number,
+        default: 0
     }
 }, { timestamps: true });
 

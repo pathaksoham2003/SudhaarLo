@@ -10,7 +10,17 @@ const serviceSchema = new mongoose.Schema({
         ref: "ServiceCategory",
         required: true
     },
-    photo: String
+    photo: String,
+    description: String,
+    basePrice: {
+        type: Number,
+        required: true,
+        default: 0
+    },
+    active: {
+        type: Boolean,
+        default: true
+    }
 }, { timestamps: true });
 
 const Service = mongoose.model("Service", serviceSchema);

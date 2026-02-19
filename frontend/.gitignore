@@ -1,3 +1,5 @@
+.env
+package-lock.json
 # Logs
 logs
 *.log
@@ -22,10 +24,3 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
-
-# Environment variables
-.env
-.env.*
-
-# Dependencies lock
-package-lock.json

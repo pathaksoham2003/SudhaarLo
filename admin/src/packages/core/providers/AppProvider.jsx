@@ -8,7 +8,7 @@ import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { SnackbarProvider } from 'notistack';
 import { RouterProvider } from 'react-router-dom';
-import Spinner from "@core/components/Elements/Spinner";
+import Spinner from "@core/component/Elements/Spinner";
 import CustomThemeProvider from './helper/ThemeProvider';
 
 const queryClient = new QueryClient()

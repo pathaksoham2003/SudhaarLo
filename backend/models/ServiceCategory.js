@@ -6,7 +6,12 @@ const serviceCategorySchema = new mongoose.Schema({
         required: true,
         unique: true
     },
-    icon: String
+    icon: String,
+    description: String,
+    active: {
+        type: Boolean,
+        default: true
+    }
 }, { timestamps: true });
 
 const ServiceCategory = mongoose.model("ServiceCategory", serviceCategorySchema);

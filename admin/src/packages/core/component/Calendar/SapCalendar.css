@@ -1,0 +1,222 @@
+/* =================================================================
+   SapCalendar — Theme-Aware FullCalendar Overrides
+   =================================================================
+   These styles adapt FullCalendar's UI to the SudhaarLo admin
+   design system and support both light and dark MUI palette modes.
+   ================================================================= */
+
+/* ---- Base typography ---------------------------------------- */
+.sap-calendar .fc {
+  font-family: inherit;
+}
+
+/* ---- Toolbar ------------------------------------------------ */
+.sap-calendar .fc .fc-toolbar {
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.sap-calendar .fc .fc-toolbar-title {
+  font-weight: 700;
+  font-size: 1.25rem;
+  letter-spacing: -0.3px;
+}
+
+/* ---- Buttons ------------------------------------------------ */
+.sap-calendar .fc .fc-button {
+  border-radius: 8px !important;
+  font-weight: 600;
+  text-transform: none;
+  padding: 6px 14px;
+  font-size: 13px;
+  transition: all 0.2s ease;
+  box-shadow: none !important;
+}
+
+.sap-calendar .fc .fc-button:focus {
+  box-shadow: 0 0 0 3px rgba(202, 21, 81, 0.25) !important;
+}
+
+.sap-calendar .fc .fc-button-group > .fc-button {
+  border-radius: 0 !important;
+}
+
+.sap-calendar .fc .fc-button-group > .fc-button:first-child {
+  border-radius: 8px 0 0 8px !important;
+}
+
+.sap-calendar .fc .fc-button-group > .fc-button:last-child {
+  border-radius: 0 8px 8px 0 !important;
+}
+
+/* ---- Table chrome ------------------------------------------- */
+.sap-calendar .fc .fc-scrollgrid {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--fc-border-color);
+}
+
+.sap-calendar .fc .fc-scrollgrid td,
+.sap-calendar .fc .fc-scrollgrid th {
+  border-color: var(--fc-border-color);
+}
+
+/* ---- Day header --------------------------------------------- */
+.sap-calendar .fc .fc-col-header-cell {
+  padding: 10px 0;
+  font-weight: 600;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ---- Day numbers -------------------------------------------- */
+.sap-calendar .fc .fc-daygrid-day-number {
+  padding: 6px 10px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.sap-calendar .fc .fc-day-today .fc-daygrid-day-number {
+  font-weight: 700;
+}
+
+/* ---- Events ------------------------------------------------- */
+.sap-calendar .fc .fc-event {
+  border-radius: 5px;
+  padding: 2px 6px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.sap-calendar .fc .fc-event:hover {
+  opacity: 0.85;
+  transform: translateY(-1px);
+}
+
+.sap-calendar .fc .fc-daygrid-event-dot {
+  border-color: var(--fc-event-bg-color);
+}
+
+/* ---- "More" link -------------------------------------------- */
+.sap-calendar .fc .fc-daygrid-more-link {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--fc-event-bg-color);
+}
+
+/* ---- Time grid ---------------------------------------------- */
+.sap-calendar .fc .fc-timegrid-slot-label {
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.sap-calendar .fc .fc-timegrid-event {
+  border-radius: 5px;
+}
+
+/* ---- List view ---------------------------------------------- */
+.sap-calendar .fc .fc-list {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.sap-calendar .fc .fc-list-day-cushion {
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.sap-calendar .fc .fc-list-event td {
+  padding: 10px 14px;
+}
+
+.sap-calendar .fc .fc-list-event-dot {
+  border-color: var(--fc-event-bg-color);
+}
+
+/* ---- Popover (dayMaxEvents) --------------------------------- */
+.sap-calendar .fc .fc-popover {
+  border-radius: 10px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  border: 1px solid var(--fc-border-color);
+  overflow: hidden;
+}
+
+.sap-calendar .fc .fc-popover-header {
+  font-weight: 700;
+  font-size: 13px;
+  padding: 8px 12px;
+}
+
+/* =================================================================
+   DARK MODE
+   ================================================================= */
+.sap-calendar--dark .fc .fc-toolbar-title,
+.sap-calendar--dark .fc .fc-col-header-cell-cushion,
+.sap-calendar--dark .fc .fc-daygrid-day-number,
+.sap-calendar--dark .fc .fc-timegrid-slot-label-cushion,
+.sap-calendar--dark .fc .fc-list-day-text,
+.sap-calendar--dark .fc .fc-list-day-side-text {
+  color: #e2e8f0;
+}
+
+.sap-calendar--dark .fc .fc-list-event-title a,
+.sap-calendar--dark .fc .fc-list-event-time {
+  color: #cbd5e1;
+}
+
+.sap-calendar--dark .fc .fc-daygrid-more-link {
+  color: #f0abbb;
+}
+
+.sap-calendar--dark .fc .fc-popover {
+  background: #1e293b;
+}
+
+.sap-calendar--dark .fc .fc-popover-header {
+  background: #334155;
+  color: #e2e8f0;
+}
+
+/* =================================================================
+   LIGHT MODE
+   ================================================================= */
+.sap-calendar--light .fc .fc-toolbar-title,
+.sap-calendar--light .fc .fc-col-header-cell-cushion,
+.sap-calendar--light .fc .fc-daygrid-day-number {
+  color: #1e293b;
+}
+
+.sap-calendar--light .fc .fc-list-day-cushion {
+  background: #f1f5f9;
+}
+
+/* =================================================================
+   RESPONSIVE
+   ================================================================= */
+@media (max-width: 600px) {
+  .sap-calendar .fc .fc-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+
+  .sap-calendar .fc .fc-toolbar-chunk {
+    display: flex;
+    justify-content: center;
+  }
+
+  .sap-calendar .fc .fc-toolbar-title {
+    font-size: 1.1rem;
+    text-align: center;
+  }
+
+  .sap-calendar .fc .fc-button {
+    padding: 5px 10px;
+    font-size: 12px;
+  }
+}
